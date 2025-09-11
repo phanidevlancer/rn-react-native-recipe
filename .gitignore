@@ -1,0 +1,70 @@
+# --------------------------------------------------
+# Node.js Backend
+# --------------------------------------------------
+backend/node_modules/
+backend/package-lock.json
+backend/.env
+backend/.env*.local
+backend/dist/
+backend/build/
+backend/logs/
+backend/*.log
+
+# Drizzle / migrations output
+backend/drizzle/
+
+# --------------------------------------------------
+# React Native Mobile App
+# --------------------------------------------------
+mobile/node_modules/
+mobile/.expo/
+mobile/.expo-shared/
+mobile/web-build/
+mobile/.expo-dev/
+mobile/.expo-web/
+mobile/.expo-build/
+
+# Android
+mobile/android/.gradle/
+mobile/android/app/build/
+mobile/android/local.properties
+mobile/android/*.iml
+mobile/android/captures/
+mobile/android/.idea/
+
+# Keystore files (DO NOT COMMIT!)
+mobile/android/*.keystore
+mobile/android/*.jks
+mobile/android/*.keystore.properties
+
+# iOS
+mobile/ios/build/
+mobile/ios/DerivedData/
+mobile/ios/Pods/
+mobile/ios/Podfile.lock
+mobile/ios/*.xcworkspace
+mobile/ios/*.xcuserstate
+mobile/ios/xcuserdata/
+
+# --------------------------------------------------
+# Common (both)
+# --------------------------------------------------
+*.log
+*.tmp
+*.swp
+*.swo
+*.orig
+*.rej
+
+# System
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+.history/

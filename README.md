@@ -1,5 +1,3 @@
-Here is a complete `README.md` file for your project, designed to help you recollect important setup steps and serve as a future reference.
-
 ```markdown
 # Full Stack Recipe Search Mobile App
 

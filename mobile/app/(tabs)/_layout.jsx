@@ -5,7 +5,7 @@ const TabsLayout = () => {
     const {isSignedIn} = useAuth()
 
     if(!isSignedIn) return <Redirect href={"/(auth)/sign-in"}/>
-    return <Stack />
+    return <Stack screenOptions={{headerShown : false}} />
 }
 
 export default TabsLayout

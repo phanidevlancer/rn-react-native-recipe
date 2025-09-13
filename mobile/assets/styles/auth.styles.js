@@ -47,6 +47,7 @@ export const authStyles = StyleSheet.create({
         position: "relative",
     },
     textInput: {
+        width : '100%',
         fontSize: 16,
         color: COLORS.text,
         paddingVertical: 16,

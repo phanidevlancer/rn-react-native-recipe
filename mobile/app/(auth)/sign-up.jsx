@@ -6,6 +6,7 @@ import { authStyles } from '../../assets/styles/auth.styles'
 import { Image } from 'expo-image'
 import { Ionicons } from '@expo/vector-icons'
 import { COLORS } from '../../constants/colors'
+import VerifyEmail from './verify-email'
 
 const SignUpScreen = () => {
 
@@ -44,10 +45,8 @@ const SignUpScreen = () => {
         }
     }
 
-    if (pendingVerification) return (
-        <View style={authStyles.container}>
-            <Text>Email pending verification</Text>
-        </View>)
+    if (pendingVerification) return <VerifyEmail email={email} onBack={() => setPendingVerification(false)} />
+
 
     return (
         <View style={authStyles.container}>

@@ -96,7 +96,7 @@ const SignInScreen = () => {
                                 placeholder='Password'
                                 placeholderTextColor={COLORS.textLight}
                                 value={password}
-                                onChange={setPassword}
+                                onChangeText={setPassword}
                                 secureTextEntry={!showPassword}
                                 autoCapitalize='none'
                             />

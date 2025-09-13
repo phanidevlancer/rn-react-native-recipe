@@ -1,4 +1,4 @@
-import { Alert, KeyboardAvoidingView, Platform, ScrollView, Text, View,TextInput,TouchableOpacity } from 'react-native'
+import { Alert, KeyboardAvoidingView, Platform, ScrollView, Text, View, TextInput, TouchableOpacity } from 'react-native'
 import { useRouter } from 'expo-router'
 import { useState } from 'react'
 import { useSignUp } from '@clerk/clerk-expo'
@@ -14,7 +14,7 @@ const SignUpScreen = () => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [showPassword, setShowPassowrd] = useState(false)
+    const [showPassword, setShowPassword] = useState(false)
     const [loading, setLoading] = useState(false)
     const [pendingVerification, setPendingVerification] = useState(false)
 
@@ -28,17 +28,26 @@ const SignUpScreen = () => {
         setLoading(true)
 
         try {
+            console.log("signup here 1")
             await signUp.create({ emailAddress: email, password: password })
+            console.log("signup here 2")
             await signUp.prepareEmailAddressVerification({ strategy: "email_code" })
+            console.log("signup here 3")
 
             setPendingVerification(true)
         } catch (error) {
-            console.error('ok google error:', error)
+            console.log("signup here 4")
+            //console.error('ok google error:', error)
             Alert.alert("Error", error.errors?.[0].message || "Exception while signing in")
         } finally {
             setLoading(false)
         }
     }
+
+    if (pendingVerification) return (
+        <View style={authStyles.container}>
+            <Text>Email pending verification</Text>
+        </View>)
 
     return (
         <View style={authStyles.container}>
@@ -82,7 +91,7 @@ const SignUpScreen = () => {
                                 placeholder='Password'
                                 placeholderTextColor={COLORS.textLight}
                                 value={password}
-                                onChange={setPassword}
+                                onChangeText={setPassword}
                                 secureTextEntry={!showPassword}
                                 autoCapitalize='none'
                             />
@@ -118,8 +127,8 @@ const SignUpScreen = () => {
 
                             <Text style={authStyles.linkText}>
                                 Already have an accout? <Text style={authStyles.link}>
-                                Sign in
-                            </Text>
+                                    Sign in
+                                </Text>
                             </Text>
                         </TouchableOpacity>
 
